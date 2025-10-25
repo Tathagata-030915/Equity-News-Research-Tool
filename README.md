@@ -45,30 +45,36 @@ Use the `requirements.txt` provided in the repository:
 
 If your model (like LLaMA-2) requires authentication, add your token inside the notebook:
 
+```python
 import os
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "hf_your_token_here"
+```
 
 ### 4️⃣ Load Vector Index
 
 If a prebuilt FAISS vector index exists, it can be loaded directly:
 
-`import pickle`
-`if os.path.exists(file_path):`
-    `with open(file_path, "rb") as f:`
-        `vectorIndex = pickle.load(f)`
+```python
+import pickle
+if os.path.exists(file_path):
+    with open(file_path, "rb") as f:
+        vectorIndex = pickle.load(f)
+```
 
 ### 5️⃣ Run RAG Chain
 
 Example:
 
-`from langchain.chains import RetrievalQAWithSourcesChain`
-`chain = RetrievalQAWithSourcesChain.from_llm(`
-    `llm=llm,`
-    `retriever=vectorIndex.as_retriever()`
-`)`
-`query = "What is the price of the Tiago iCNG?"`
-`response = chain({"question": query}, return_only_outputs=True)`
-`print(response)`
+```python
+from langchain.chains import RetrievalQAWithSourcesChain
+chain = RetrievalQAWithSourcesChain.from_llm(
+    llm=llm,
+    retriever=vectorIndex.as_retriever()
+)
+query = "What is the price of the Tiago iCNG?"
+response = chain({"question": query}, return_only_outputs=True)
+print(response)
+```
 
 ### 🧠 Model Details
 * **Primary Model:** tiiuae/falcon-7b-instruct (~7GB if downloading)
