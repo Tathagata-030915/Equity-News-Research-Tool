@@ -45,8 +45,8 @@ Use the `requirements.txt` provided in the repository:
 
 If your model (like LLaMA-2) requires authentication, add your token inside the notebook:
 
-`import os`
-`os.environ["HUGGINGFACEHUB_API_TOKEN"] = "hf_your_token_here"`
+import os
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "hf_your_token_here"
 
 ### 4️⃣ Load Vector Index
 
