@@ -2,7 +2,7 @@
 
 A **Generative AI project** built using the **LangChain** framework and **Hugging Face LLMs** for financial and equity market research.
 
-The app is deployed using **Streamlit** as proff of concept, where users can input **3 financial news URLs of their preference** along with a **custom query**.  
+The app is deployed using **Streamlit** as proof of concept, where users can input **3 financial news URLs of their preference** along with a **custom query**.  
 The system then retrieves, embeds, and analyzes the news data using a **retrieval-augmented generation (RAG)** pipeline and generates concise, context-aware answers using a Large Language Model.
 
 ---
